@@ -1,0 +1,351 @@
+
+
+
+/* === MISE EN PAGE GLOBALE === */
+
+* {
+	margin: 0; /* Supprime les marges par défaut */
+	padding: 0; /* Supprime les paddings par défaut */
+	box-sizing: border-box; /* Inclut les paddings et bordures dans les dimensions */
+	text-decoration: none; /* Supprime les soulignements des liens */
+	list-style: none; /* Supprime les puces des listes */
+}
+
+body {
+	color: var(--couleur-fonce); /* Couleur du texte */
+	background-color: var(--couleur-clair); /* Couleur de fond */
+	align-items: center; /* Centre verticalement (utile en flex) */
+	justify-content: center; /* Centre horizontalement */
+	font-family: arial, sans-serif; /* Police de base */
+}
+
+
+
+/* === VARIABLES CSS GLOBALES === */
+:root {
+	--s: 300px; /* Taille des cellules (grille astuces) */
+	--g: 10px; /* Gouttière entre les cellules */
+	--f: 1.20; /* Facteur de zoom au survol */
+	--font-size: 40px; /* Taille de police pour la galerie */
+	--couleur-fonce: #FF8A8C; /* Couleur principale */
+	--couleur-clair: white; /* Couleur secondaire */
+}
+
+
+
+
+/* === STRUCTURE DES GRANDES SECTIONS === */
+
+.titre-site, .texte-intro, .podcast, .astuces {
+	width: 100vw; /* Largeur = largeur de la fenêtre */
+	height: 100vh; /* Hauteur = hauteur de la fenêtre */
+}
+
+.titre-site, .texte-intro, .astuces {
+	display: flex; /* Utilise flexbox */
+	justify-content: center; /* Centre horizontalement */
+	align-items: center; /* Centre verticalement */
+}
+
+
+
+
+
+
+
+
+/* === NAVBAR === */
+
+.navbar {
+	padding: 50px; /* Espacement interne */
+	display: flex; /* Flexbox horizontal */
+	justify-content: space-between; /* Espacement maximal entre éléments */
+	align-items: center; /* Aligne verticalement */
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.navbar a {
+	color: var(--couleur-fonce); /* Couleur des liens */
+	background-color: var(--couleur-clair); /* Fond clair */
+}
+
+.navbar .nom {
+	font-size: 2rem; /* Taille du nom */
+	font-weight: bold; /* Gras */
+}
+
+.navbar .nav-links ul {
+	display: flex; /* Aligne horizontalement les éléments */
+}
+
+.navbar .nav-links ul li {
+	margin: 0 30px; /* Espacement entre les liens */
+}
+
+.navbar .menu-hamburger {
+	display: none; /* Cacher sur desktop */
+	position: absolute;
+	top: 50px;
+	right: 30px;
+	width: 35px; /* Taille de l'icône */
+}
+
+
+
+
+/* === VERSION MOBILE POUR NAVBAR === */
+
+@media screen and (max-width:900px) {
+
+	.navbar {
+		padding: 0; /* Réduction padding mobile */
+	}
+
+	.navbar .nom {
+		position: absolute;
+		top: 40px;
+		left: 30px;
+	}
+
+	.navbar .menu-hamburger {
+		display: block; /* Affiche menu burger */
+		z-index: 1001;
+	}
+
+	.nav-links {
+		top: 0;
+		left: 0;
+		position: absolute;
+		background-color: rgba(255, 255, 255, 0.20); /* Fond semi-transparent */
+		backdrop-filter: blur(7px); /* Flou de fond */
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: -100%; /* Cache le menu au départ */
+		transition: all 0.5s ease; /* Animation douce */
+		z-index: 1000;
+	}
+
+	.nav-links.mobile-menu {
+		margin-left: 0; /* Affiche le menu au clic */
+	}
+
+	.nav-links ul {
+		display: flex;
+		flex-direction: column; /* Colonne verticale */
+		align-items: center;
+	}
+
+	.navbar .nav-links ul li {
+		margin: 25px 0;
+		font-size: 1.2em;
+	}
+}
+
+
+
+
+
+
+
+
+/* === TITRE PRINCIPAL (ANXIETE & UNIVERSITE) === */
+
+.titre-site {
+	text-align: center;
+	position: relative;
+	width: 90%;
+	height: 400px;
+	max-width: 1000px;
+	max-height: 500px;
+}
+
+.main-title {
+	position: relative;
+	display: inline-block;
+}
+
+.text-anxiete,
+.text-universite,
+.text-et {
+	position: absolute;
+	left: 70%;
+	transform: translateX(-50%);
+	white-space: nowrap;
+}
+
+.text-anxiete {
+	top: -2rem;
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+.text-universite {
+	top: 3rem;
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+.text-et {
+	font-size: 10rem;
+	opacity: 0.1; /* Transparence du "&" */
+	line-height: 1;
+}
+
+/* Version mobile du titre */
+@media screen and (max-width: 600px) {
+	.text-anxiete {
+		font-size: 2rem;
+		top: -1.5rem;
+	}
+
+	.text-universite {
+		font-size: 2rem;
+		top: 2rem;
+	}
+
+	.text-et {
+		font-size: 6rem;
+	}
+}
+
+
+
+/* === TEXTE D’INTRODUCTION === */
+
+.texte-intro {
+	display: flex; /* Deux colonnes côte à côte */
+	height: 140px;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 18px;
+}
+
+.texte-intro1, .texte-intro2 {
+	margin-right: 15px; /* Espace entre les paragraphes */
+}
+
+
+
+
+
+
+
+
+
+/* === PODCAST (CARROUSEL HORIZONTAL) === */
+
+.podcast {
+	max-height: 600px;
+	display: flex;
+	overflow-x: auto; /* Scroll horizontal */
+}
+
+.podcast::-webkit-scrollbar {
+	display: none; /* Masque la scrollbar */
+}
+
+.item {
+	background-color: var(--couleur-fonce);
+	display: flex;
+	flex-direction: column;
+	min-width: 300px;
+	height: 400px;
+	line-height: 110px;
+	margin-right: 15px;
+	border-radius: 25px;
+	transition: color .3s ease-out, background-color .3s ease-out;
+}
+
+.episode {
+	color: var(--couleur-clair);
+	margin-bottom: 70px;
+	margin-left: 20px;
+	font-size: 40px;
+}
+
+.description {
+	color: var(--couleur-clair);
+	margin: 0 20px;
+	line-height: 1.8rem;
+	font-size: 15px;
+	margin-top: auto; /* Colle en bas */
+}
+
+
+
+
+
+
+
+
+
+/* === ASTUCES (GRILLE ZOOMABLE) === */
+
+.gallery {
+	margin-top: 800px;
+	display: grid;
+	gap: var(--g);
+	grid-template-columns: repeat(3, 1fr);
+	width: 100%;
+	max-width: calc(3 * var(--s) + 2 * var(--g));
+	margin-left: auto;
+	margin-right: auto;
+	overflow: visible;
+	font-size: var(--font-size);
+}
+
+.cellule {
+	background-color: var(--couleur-fonce);
+	font-size: inherit;
+	text-align: center;
+	display: grid;
+	place-items: center;
+	border-radius: 25px;
+	margin-bottom: 5px;
+}
+
+.gallery > .cellule {
+	width: 95%;
+	aspect-ratio: 1;
+	object-fit: cover;
+	cursor: pointer;
+	transition: transform 0.3s ease, filter 0.3s ease, color .3s ease-out, background-color .3s ease-out;
+}
+
+.gallery .cellule:hover {
+	filter: grayscale(10%);
+	transform: scale(var(--f));
+	z-index: 1;
+}
+
+.nom {
+	color: var(--couleur-clair);
+}
+
+
+/* Version mobile pour la galerie */
+@media (max-width: 600px) {
+	.gallery {
+		--s: 200px;
+		--font-size: 32px;
+		grid-template-columns: repeat(2, 1fr);
+		max-width: calc(2 * var(--s) + 1 * var(--g));
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
