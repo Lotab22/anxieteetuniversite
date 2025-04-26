@@ -4,7 +4,6 @@
 /* === MISE EN PAGE GLOBALE === */
 
 * {
-	margin: 0; /* Supprime les marges par défaut */
 	padding: 0; /* Supprime les paddings par défaut */
 	box-sizing: border-box; /* Inclut les paddings et bordures dans les dimensions */
 	text-decoration: none; /* Supprime les soulignements des liens */
@@ -17,6 +16,7 @@ body {
 	align-items: center; /* Centre verticalement (utile en flex) */
 	justify-content: center; /* Centre horizontalement */
 	font-family: arial, sans-serif; /* Police de base */
+	transition: color 1.0s ease-out, background-color 1.0s ease-out;
 }
 
 
@@ -33,11 +33,36 @@ body {
 
 
 
+/* === IMPORT DES TYPOGRAPHIE === */
+
+@font-face {
+  font-family: 'kindora';
+  src: url('./font/kindora.otf') format('opentype'),
+       url('./font/kindora.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'chillax';
+  src: url('./font/chillax.otf') format('opentype'),
+		url('./font/chillax.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src: url('./font/montserrat.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 
 /* === STRUCTURE DES GRANDES SECTIONS === */
 
 .titre-site, .texte-intro, .podcast, .astuces {
-	width: 100vw; /* Largeur = largeur de la fenêtre */
 	height: 100vh; /* Hauteur = hauteur de la fenêtre */
 }
 
@@ -55,96 +80,91 @@ body {
 
 
 /* === NAVBAR === */
-
 .navbar {
-	padding: 50px; /* Espacement interne */
-	display: flex; /* Flexbox horizontal */
-	justify-content: space-between; /* Espacement maximal entre éléments */
-	align-items: center; /* Aligne verticalement */
-	width: 100%;
-	box-sizing: border-box;
+	font-family: 'chillax', sans-serif; /* Police de caractères pour la navbar */
+	padding: 50px; /* Espacement interne autour du contenu */
+	height: 120px; /* Hauteur fixe pour stabilité d'affichage */
+	display: flex; /* Utilise Flexbox pour aligner horizontalement */
+	justify-content: space-between; /* Écarte les éléments au maximum */
+	align-items: center; /* Centre verticalement les éléments */
+	width: 100%; /* Navbar prend toute la largeur */
+	box-sizing: border-box; /* Inclut padding et bordures dans le width */
+	position: relative; /* Nécessaire pour positionner les éléments enfants en absolute */
 }
 
 .navbar a {
 	color: var(--couleur-fonce); /* Couleur des liens */
-	background-color: var(--couleur-clair); /* Fond clair */
+	background-color: transparent; /* Pas de fond pour les liens */
+	text-decoration: none; /* Enlève le soulignement */
 }
 
 .navbar .nom {
-	font-size: 2rem; /* Taille du nom */
-	font-weight: bold; /* Gras */
+	font-size: 2rem; /* Taille du texte pour le nom */
+	font-weight: bold; /* Texte en gras */
 }
 
 .navbar .nav-links ul {
-	display: flex; /* Aligne horizontalement les éléments */
+	display: flex; /* Aligne les liens horizontalement */
+	font-size: 18px;
 }
 
 .navbar .nav-links ul li {
-	margin: 0 30px; /* Espacement entre les liens */
+	margin: 0 30px; /* Espace horizontal entre chaque lien */
 }
 
 .navbar .menu-hamburger {
-	display: none; /* Cacher sur desktop */
-	position: absolute;
-	top: 50px;
-	right: 30px;
-	width: 35px; /* Taille de l'icône */
+	display: none; /* Caché en desktop */
+	position: absolute; /* Positionné par rapport à .navbar */
+	top: 50%; /* Centré verticalement */
+	right: 30px; /* Décalé du bord droit */
+	transform: translateY(-50%); /* Corrige le centrage vertical */
+	width: 35px; /* Taille de l'icône hamburger */
+	cursor: pointer; /* Curseur en forme de main au survol */
 }
 
-
-
-
 /* === VERSION MOBILE POUR NAVBAR === */
-
-@media screen and (max-width:900px) {
+@media screen and (max-width: 900px) {
 
 	.navbar {
-		padding: 0; /* Réduction padding mobile */
-	}
-
-	.navbar .nom {
-		position: absolute;
-		top: 40px;
-		left: 30px;
+		padding: 50px; /* Réduit le padding en mobile */
+		height: 120px; /* Hauteur fixe pour stabilité d'affichage */
 	}
 
 	.navbar .menu-hamburger {
-		display: block; /* Affiche menu burger */
-		z-index: 1001;
-	}
-
-	.nav-links {
-		top: 0;
-		left: 0;
-		position: absolute;
-		background-color: rgba(255, 255, 255, 0.20); /* Fond semi-transparent */
-		backdrop-filter: blur(7px); /* Flou de fond */
-		width: 100%;
-		height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-left: -100%; /* Cache le menu au départ */
-		transition: all 0.5s ease; /* Animation douce */
+		display: block; /* Affiche le menu hamburger */
 		z-index: 1000;
 	}
 
-	.nav-links.mobile-menu {
-		margin-left: 0; /* Affiche le menu au clic */
+	.navbar .nav-links {
+		position: fixed; /* Fixe la position du menu sur tout l'écran */
+		top: 0; /* Collé en haut */
+		left: 0; /* Collé à gauche */
+		width: 100%; /* Prend toute la largeur */
+		height: 100vh; /* Prend toute la hauteur visible */
+		background-color: rgba(255, 255, 255, 0.2); /* Fond semi-transparent */
+		backdrop-filter: blur(7px); /* Floute l'arrière-plan */
+		display: flex; /* Flexbox pour aligner contenu */
+		flex-direction: column; /* Direction verticale */
+		justify-content: center; /* Centre verticalement */
+		align-items: center; /* Centre horizontalement */
+		transform: translateX(-100%); /* Cacher complètement sur la gauche au départ */
+		transition: transform 0.5s ease; /* Animation douce pour le menu */
+		z-index: 999; /* Superposition par-dessus le reste */
 	}
 
-	.nav-links ul {
-		display: flex;
-		flex-direction: column; /* Colonne verticale */
-		align-items: center;
+	.navbar .nav-links.mobile-menu {
+		transform: translateX(0); /* Fait glisser le menu pour l'afficher */
+	}
+
+	.navbar .nav-links ul {
+		flex-direction: column; /* Les liens sont empilés verticalement */
 	}
 
 	.navbar .nav-links ul li {
-		margin: 25px 0;
-		font-size: 1.2em;
+		font-size: 50px;
+		margin: 40px 0; /* Espacement vertical entre les liens */
 	}
 }
-
 
 
 
@@ -153,81 +173,156 @@ body {
 
 
 /* === TITRE PRINCIPAL (ANXIETE & UNIVERSITE) === */
-
 .titre-site {
-	text-align: center;
-	position: relative;
-	width: 90%;
-	height: 400px;
-	max-width: 1000px;
-	max-height: 500px;
+	font-family: 'kindora', sans-serif; /* Police spécifique pour le titre principal */
+	position: relative; /* Pour positionner les textes enfants en absolute */
+	padding-top: 150px; /* Espace au-dessus pour ne pas coller à la navbar */
+	text-align: center; /* Centre le contenu horizontalement */
 }
 
 .main-title {
-	position: relative;
-	display: inline-block;
+	position: relative; /* Nécessaire pour la position des éléments enfants */
+	display: inline-block; /* Permet au titre de ne prendre que sa taille utile */
 }
 
 .text-anxiete,
 .text-universite,
 .text-et {
-	position: absolute;
-	left: 70%;
-	transform: translateX(-50%);
-	white-space: nowrap;
+	position: absolute; /* Positionnement précis par rapport au .main-title */
+	left: 50%; /* Place au centre horizontalement */
+	white-space: nowrap; /* Empêche le texte de passer à la ligne */
+	transform: translateX(-50%); /* Centre parfaitement (décale de moitié la largeur) */
+	transition: all 0.5s ease; /* Transition fluide pour toutes les propriétés */
 }
 
 .text-anxiete {
-	top: -2rem;
-	font-size: 3rem;
-	font-weight: bold;
+	top: -20rem; /* Position verticale par rapport au centre */
+	font-size: 100px; /* Grande taille pour impact visuel */
+	margin-left: -270px;
+	font-weight: normal; /* Poids normal */
 }
 
 .text-universite {
-	top: 3rem;
-	font-size: 3rem;
-	font-weight: bold;
+	top: -12rem; /* Moins haut que "anxiété" */
+	font-size: 100px; /* Même taille */
+	margin-left: 270px;
+	font-weight: normal;
 }
 
 .text-et {
-	font-size: 10rem;
-	opacity: 0.1; /* Transparence du "&" */
-	line-height: 1;
+	top: -24rem; /* Encore plus haut */
+	font-size: 520px; /* Très grand pour l'effet "&" de fond */
+	opacity: 0.1; /* Semi-transparent */
+	line-height: 1; /* Ligne serrée */
 }
 
-/* Version mobile du titre */
-@media screen and (max-width: 600px) {
+
+
+/* === Responsiveness pour titre principal === */
+
+/* Si écran ≤ 900px */
+@media (max-width: 900px) {
 	.text-anxiete {
-		font-size: 2rem;
-		top: -1.5rem;
+		top: -18rem; /* Ajuste la position verticale */
+		font-size: 60px; /* Réduit la taille du texte */
+		margin-left: -160px;
 	}
 
 	.text-universite {
-		font-size: 2rem;
-		top: 2rem;
+		top: -13rem;
+		font-size: 60px;
+		margin-left: 160px;
+	}
+}
+
+/* Si écran ≤ 500px */
+@media (max-width: 500px) {
+	.text-anxiete {
+		top: -17rem; /* Descend encore */
+		font-size: 40px; /* Plus petit pour téléphones */
+		margin-left: -70px;
 	}
 
-	.text-et {
-		font-size: 6rem;
+	.text-universite {
+		top: -13rem;
+		font-size: 40px;
+		margin-left: 70px;
 	}
 }
 
 
 
-/* === TEXTE D’INTRODUCTION === */
+
+
+
+
+
+/* === TEXTE SOUS TITRE PRINCIPAL === */
 
 .texte-intro {
-	display: flex; /* Deux colonnes côte à côte */
-	height: 140px;
-	margin-left: 20px;
-	margin-right: 20px;
-	font-size: 18px;
+	    position: relative;
+	    font-family: "Montserrat";
+		font-size: 27px;
+		margin-right: 40px;
+		top: -32rem;
+	}
+
+.texte-intro1 {
+		margin-left: 50px;
+	}
+
+.texte-intro1 {
+		margin-right: 50px;
+	}
+
+.texte-intro, .texte-intro1, .texte-intro1{
+		transition: all 0.5s ease; /* Transition fluide pour toutes les propriétés */
+	}
+
+/* === Responsiveness pour texte descriptif === */
+
+/* Si écran ≤ 900px */
+@media (max-width: 900px) {
+
+	.texte-intro {
+		gap: 30px; /* Espace de 20px entre CHAQUE enfant */
+	}
+
+	.texte-intro1 {
+		top: -18rem; /* Ajuste la position verticale */
+		font-size: 20px; /* Réduit la taille du texte */
+		margin-right: 10px;
+		gap: 30px; /* Espace de 20px entre CHAQUE enfant */
+	}
+
+	.texte-intro2 {
+		top: -13rem;
+		font-size: 20px;
+		margin-left: -10px;
+	}
 }
 
-.texte-intro1, .texte-intro2 {
-	margin-right: 15px; /* Espace entre les paragraphes */
-}
+/* Si écran ≤ 500px */
+@media (max-width: 500px) {
 
+	.texte-intro {
+		top: -26rem; /* Descend encore */
+		display: flex;
+		flex-direction: column;
+	}
+
+	.texte-intro1 {
+		font-size: 20px; /* Plus petit pour téléphones */
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+
+	.texte-intro2 {
+		font-size: 20px;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+}
 
 
 
@@ -257,10 +352,10 @@ body {
 	line-height: 110px;
 	margin-right: 15px;
 	border-radius: 25px;
-	transition: color .3s ease-out, background-color .3s ease-out;
 }
 
 .episode {
+	font-family: 'chillax', sans-serif;
 	color: var(--couleur-clair);
 	margin-bottom: 70px;
 	margin-left: 20px;
@@ -268,6 +363,7 @@ body {
 }
 
 .description {
+	font-family: 'montserrat', sans-serif;
 	color: var(--couleur-clair);
 	margin: 0 20px;
 	line-height: 1.8rem;
@@ -323,6 +419,7 @@ body {
 }
 
 .nom {
+	font-family: 'chillax', sans-serif;
 	color: var(--couleur-clair);
 }
 
@@ -337,7 +434,12 @@ body {
 	}
 }
 
-
+/* Enlever la couleur des liens */
+.astuces a {
+	color: var(--couleur-clair); /* Couleur des liens */
+	background-color: var(--couleur-fonce); /* Fond clair */
+	background-color: transparent; /* Enlever le fond qui créer boîte */
+}
 
 
 
