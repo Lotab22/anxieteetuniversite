@@ -355,10 +355,9 @@ body {
 	font-size: 120px;
   position: absolute;
   right: 1px;
-  top: 33%;
+  top: 58%;
   transform: translateY(-50%);
   color: var(--couleur-clair);
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* ← Ajoute juste une ombre portée */
   border-radius: 50%;
   padding: 10px;
 }
@@ -429,10 +428,9 @@ body {
 	font-size: 100px;
   position: absolute;
   right: 1px;
-  top: 33%;
+  top: 58%;
   transform: translateY(-50%);
   color: var(--couleur-clair);
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* ← Ajoute juste une ombre portée */
   border-radius: 50%;
   padding: 10px;
 }
