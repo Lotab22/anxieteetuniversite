@@ -99,7 +99,7 @@ body {
 }
 
 .navbar .nom {
-	font-size: 2rem; /* Taille du texte pour le nom */
+	font-size: 32px; /* Taille du texte pour le nom */
 	font-weight: bold; /* Texte en gras */
 }
 
@@ -122,7 +122,7 @@ body {
 	cursor: pointer; /* Curseur en forme de main au survol */
 }
 
-/* === VERSION MOBILE POUR NAVBAR === */
+/* === Version hamburger === */
 @media screen and (max-width: 900px) {
 
 	.navbar {
@@ -161,8 +161,17 @@ body {
 	}
 
 	.navbar .nav-links ul li {
-		font-size: 50px;
+		font-size: 32px;
 		margin: 40px 0; /* Espacement vertical entre les liens */
+		text-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* ← Ajoute juste une ombre portée */
+	}
+}
+
+/* === Version téléphone === */
+@media screen and (max-width: 500px) {
+
+	.navbar .nom {
+		font-size: 24px;
 	}
 }
 
@@ -211,43 +220,33 @@ body {
 
 .text-et {
 	top: -24rem; /* Encore plus haut */
-	font-size: 520px; /* Très grand pour l'effet "&" de fond */
+	font-size: 480px; /* Très grand pour l'effet "&" de fond */
 	opacity: 0.1; /* Semi-transparent */
 	line-height: 1; /* Ligne serrée */
 }
 
 
 
-/* === Responsiveness pour titre principal === */
-
-/* Si écran ≤ 900px */
-@media (max-width: 900px) {
-	.text-anxiete {
-		top: -18rem; /* Ajuste la position verticale */
-		font-size: 60px; /* Réduit la taille du texte */
-		margin-left: -160px;
-	}
-
-	.text-universite {
-		top: -13rem;
-		font-size: 60px;
-		margin-left: 160px;
-	}
-}
-
-/* Si écran ≤ 500px */
+/* Responsive pour téléphone */
 @media (max-width: 500px) {
 	.text-anxiete {
-		top: -17rem; /* Descend encore */
+		top: -18rem; /* Descend encore */
 		font-size: 40px; /* Plus petit pour téléphones */
-		margin-left: -70px;
+		margin-left: -50px;
 	}
 
 	.text-universite {
-		top: -13rem;
+		top: -14rem;
 		font-size: 40px;
-		margin-left: 70px;
+		margin-left: 30px;
 	}
+
+		.text-et {
+	top: -24rem; /* Encore plus haut */
+	font-size: 440px; /* Très grand pour l'effet "&" de fond */
+	opacity: 0.1; /* Semi-transparent */
+	line-height: 1; /* Ligne serrée */
+}
 }
 
 
@@ -279,7 +278,7 @@ body {
 		transition: all 0.5s ease; /* Transition fluide pour toutes les propriétés */
 	}
 
-/* === Responsiveness pour texte descriptif === */
+/* === Responsiveness pour texte descriptif === */ /* A ADAPTER QUE SUR TEL*/
 
 /* Si écran ≤ 900px */
 @media (max-width: 900px) {
@@ -302,7 +301,7 @@ body {
 	}
 }
 
-/* Si écran ≤ 500px */
+/* Pour téléphone */
 @media (max-width: 500px) {
 
 	.texte-intro {
@@ -314,13 +313,11 @@ body {
 	.texte-intro1 {
 		font-size: 20px; /* Plus petit pour téléphones */
 		margin-left: 50px;
-		margin-right: 50px;
 	}
 
 	.texte-intro2 {
 		font-size: 20px;
 		margin-left: 50px;
-		margin-right: 50px;
 	}
 }
 
@@ -333,22 +330,46 @@ body {
 
 /* === PODCAST (CARROUSEL HORIZONTAL) === */
 
+/* Flèche */
+.podcast-wrapper {
+  position: relative;
+  top: -40rem; /* <-- ici au lieu de sur .podcast */
+}
+
+
 .podcast {
-	max-height: 600px;
-	display: flex;
-	overflow-x: auto; /* Scroll horizontal */
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth; /* Effet de défilement fluide */
+  padding-right: 60px; /* Laisse un peu de place à droite pour la flèche */
 }
 
 .podcast::-webkit-scrollbar {
-	display: none; /* Masque la scrollbar */
+  display: none;
 }
+
+
+/* Flèche */
+.arrow-right {
+	font-family: "montserrat";
+	font-size: 120px;
+  position: absolute;
+  right: 1px;
+  top: 33%;
+  transform: translateY(-50%);
+  color: var(--couleur-clair);
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* ← Ajoute juste une ombre portée */
+  border-radius: 50%;
+  padding: 10px;
+}
+
 
 .item {
 	background-color: var(--couleur-fonce);
 	display: flex;
 	flex-direction: column;
-	min-width: 300px;
-	height: 400px;
+	min-width: 350px;
+	height: 520px;
 	line-height: 110px;
 	margin-right: 15px;
 	border-radius: 25px;
@@ -356,10 +377,32 @@ body {
 
 .episode {
 	font-family: 'chillax', sans-serif;
+	font-size: 62px;
 	color: var(--couleur-clair);
+	margin-top: 90px;
 	margin-bottom: 70px;
 	margin-left: 20px;
-	font-size: 40px;
+	line-height: 3rem;
+}
+
+/* Texte sur 2 lignes */
+.special {
+	font-family: 'chillax', sans-serif;
+	font-size: 65px;
+	color: var(--couleur-clair);
+	margin-top: 40px;
+	margin-left: 20px;
+	line-height: 3rem;
+}
+
+/* Texte pour 2 lignes */
+.description2 {
+	font-family: 'montserrat', sans-serif;
+	color: var(--couleur-clair);
+	margin: 0 20px;
+	line-height: 1.8rem;
+	font-size: 18px;
+	margin-top: 90px; /* Colle en bas */
 }
 
 .description {
@@ -367,12 +410,33 @@ body {
 	color: var(--couleur-clair);
 	margin: 0 20px;
 	line-height: 1.8rem;
-	font-size: 15px;
-	margin-top: auto; /* Colle en bas */
+	font-size: 18px;
+	margin-top: 20px; /* Colle en bas */
 }
 
 
+/* Pour téléphone */
+@media (max-width: 500px) {
 
+.podcast-wrapper {
+		position: relative;
+		top: -28rem; /* Descend encore */
+	}
+
+	/* Flèche */
+.arrow-right {
+	font-family: "montserrat";
+	font-size: 100px;
+  position: absolute;
+  right: 1px;
+  top: 33%;
+  transform: translateY(-50%);
+  color: var(--couleur-clair);
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* ← Ajoute juste une ombre portée */
+  border-radius: 50%;
+  padding: 10px;
+}
+}
 
 
 
@@ -382,7 +446,8 @@ body {
 /* === ASTUCES (GRILLE ZOOMABLE) === */
 
 .gallery {
-	margin-top: 800px;
+	position: relative;
+	margin-top: -900px;
 	display: grid;
 	gap: var(--g);
 	grid-template-columns: repeat(3, 1fr);
@@ -424,8 +489,8 @@ body {
 }
 
 
-/* Version mobile pour la galerie */
-@media (max-width: 600px) {
+/* Version responsive gallery pour tous support */
+@media (max-width: 500px) {
 	.gallery {
 		--s: 200px;
 		--font-size: 32px;
@@ -445,6 +510,30 @@ body {
 
 
 
+
+/* FIN */
+.fin {
+	position: relative;
+	margin-top: -150px;
+	margin-left: 605px;
+	font-family: "chillax";
+	font-size: 30px;
+	color: var(--couleur-fonce); 
+}
+
+/* Pour téléphone */
+@media (max-width: 500px) {
+
+.fin {
+	position: relative;
+	margin-top: -270px;
+	margin-left: 110px;
+	font-family: "chillax";
+	font-size: 20px;
+	color: var(--couleur-fonce); 
+}
+
+}
 
 
 
