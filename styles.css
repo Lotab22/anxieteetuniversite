@@ -228,20 +228,20 @@ body {
 }
 
 .text-anxiete {
-	top: -20rem; /* Position verticale par rapport au centre */
+	top: -21rem; /* Position verticale par rapport au centre */
 	font-size: 100px; /* Grande taille pour impact visuel */
 	font-weight: normal; /* Poids normal */
 }
 
 .text-universite {
-	top: -12rem; /* Moins haut que "anxiété" */
+	top: -13rem; /* Moins haut que "anxiété" */
 	font-size: 100px; /* Même taille */
 	font-weight: normal;
 }
 
 .text-et {
-	top: -24rem; /* Encore plus haut */
-	font-size: 480px; /* Très grand pour l'effet "&" de fond */
+	top: -25rem; /* Encore plus haut */
+	font-size: 520px; /* Très grand pour l'effet "&" de fond */
 	opacity: 0.1; /* Semi-transparent */
 	line-height: 1; /* Ligne serrée */
 }
@@ -565,18 +565,6 @@ body {
 }
 
 
-/* Version responsive astuces pour tous support */
-
-@media (max-width: 500px) {
-	.gallery {
-		--s: 200px;
-		--font-size: 32px;
-		margin-top: -800px;
-		margin-left: 10px;
-		grid-template-columns: repeat(2, 1fr);
-		max-width: calc(2 * var(--s) + 1 * var(--g));
-	}
-}
 
 	/* === Responsive pour téléphone === */
 
@@ -592,8 +580,7 @@ body {
 
 		position: relative;
 		margin-top: -500px;
-		margin-left: 0,5px;
-		margin-right: 0,5px;
+		margin-left: -1px;
 	}
 
 }
