@@ -557,28 +557,28 @@ body {
 
 
 
+/* Fin */
 
-
-
-/* FIN */
+.fin, .astuces{
+	display: flex;
+	flex-direction: column;
+}
 
 .fin {
-	position: relative;
-	margin-top: -150px;
-	margin-left: 605px;
 	font-family: "chillax";
 	font-size: 30px;
+	margin-top: 15px;
+	text-align: center;
 	color: var(--couleur-fonce); 
 }
+
 
 /* Pour téléphone */
 
 @media (max-width: 500px) {
 
 .fin {
-	position: relative;
-	margin-top: -150px;
-	margin-left: 110px;
+  text-align: center;
 	font-family: "chillax";
 	font-size: 20px;
 	color: var(--couleur-fonce); 
