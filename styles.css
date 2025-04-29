@@ -203,6 +203,7 @@ body {
 
 
 
+
 /* === TITRE PRINCIPAL (ANXIETE & UNIVERSITE) === */
 
 .titre-site {
@@ -289,6 +290,7 @@ body {
 	line-height: 1; /* Ligne serrée */
 }
 }
+
 
 
 
@@ -391,6 +393,7 @@ body {
 }
 
 
+
 /* Flèche */
 
 .arrow-right {
@@ -404,6 +407,7 @@ body {
   border-radius: 50%;
   padding: 10px;
 }
+
 
 
 .item {
@@ -426,6 +430,8 @@ body {
 	margin-left: 20px;
 	line-height: 3rem;
 }
+
+
 
 /* Texte sur 2 lignes */
 
@@ -499,7 +505,7 @@ body {
 
 
 
-/* === GALERIE ASTUCES (Grille zoomable et responsive) === */
+/* === ASTUCES === */
 
 .gallery {
 	position: relative;
@@ -515,7 +521,7 @@ body {
   z-index: 1; /* S'assure que la galerie reste visible par-dessus d'autres éléments */
 }
 
-/* Style de base des cellules (cartes) dans la galerie */
+
 .cellule {
   background-color: var(--couleur-fonce); /* Couleur de fond des cellules */
   font-size: inherit; /* Hérite de la taille de police de .gallery */
@@ -526,7 +532,7 @@ body {
   margin-bottom: 5px; /* Petit espace sous chaque cellule */
 }
 
-/* Style spécifique pour chaque cellule dans la grille */
+
 .gallery > .cellule {
   width: 100%; /* Prend toute la largeur disponible dans la colonne */
   aspect-ratio: 1; /* Garde un format carré */
@@ -535,14 +541,14 @@ body {
   transition: transform 0.3s ease, filter 0.3s ease, color 0.3s ease-out, background-color 0.3s ease-out; /* Animations douces */
 }
 
-/* Effet au survol : zoom et légère désaturation */
+
 .gallery .cellule:hover {
   filter: grayscale(10%); /* Applique un léger filtre gris */
   transform: scale(var(--f)); /* Zoom selon le facteur défini dans :root */
   z-index: 1; /* Fait passer l’élément au-dessus des autres */
 }
 
-/* Texte à l'intérieur des cellules */
+
 .nom {
   font-family: 'chillax', sans-serif; /* Police personnalisée */
   color: var(--couleur-clair); /* Texte en couleur claire */
@@ -550,15 +556,13 @@ body {
 
 
 
-
 /* === Responsive pour téléphone === */
 
-@media screen and (max-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 425px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur petit écran */
     gap: 10px;
     margin-top: 300px;
-    right: 10px;
     max-width: 100%;
   }
 
@@ -569,16 +573,11 @@ body {
   .nom {
     font-size: 20px; /* Réduit la taille du texte dans les cellules */
   }
-
-  /* Réduit taille div podcats dans ce cas */
- .astuces, .fin {
- 	height: 70vh;
-}
 }
 
 /* === Responsive pour tablette === */
 
-@media screen and (min-width: 426px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .gallery {
     grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur tablette */
     gap: 15px;
