@@ -401,7 +401,6 @@ body {
 
 
 .podcast {
-	margin-left: 15px;
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth; /* Effet de défilement fluide */
