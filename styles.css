@@ -3,6 +3,7 @@
 
 /* === MISE EN PAGE GLOBALE === */
 
+
 * {
 	padding: 0; /* Supprime les paddings par défaut */
 	box-sizing: border-box; /* Inclut les paddings et bordures dans les dimensions */
@@ -26,7 +27,7 @@ body {
 :root {
 	--s: 300px; /* Taille des cellules (grille astuces) */
 	--g: 10px; /* Gouttière entre les cellules */
-	--f: 1.5; /* Facteur de zoom au survol */tp
+	--f: 1.5; /* Facteur de zoom au survol */
 	--font-size: 40px; /* Taille de police pour la galerie */
 	--couleur-fonce: #FF8A8C; /* Couleur principale */
 	--couleur-clair: white; /* Couleur secondaire */
@@ -61,12 +62,18 @@ body {
 
 /* === STRUCTURE DES GRANDES SECTIONS === */
 
-.titre-site, .texte-intro, .podcast, .astuces {
-  min-height: 100vh; /* Hauteur minimale = écran, mais adaptative */
-  display: flex; /* Utilise flexbox */
-  justify-content: center; /* Centre horizontalement */
-  align-items: center; /* Centre verticalement */
-  flex-direction: column; /* Aligne verticalement les enfants */
+.titre-site, .texte-intro, .podcast {
+	height: 100vh; /* Hauteur = hauteur de la fenêtre */
+}
+
+.astuces {
+	height: 50vh; /* Hauteur = hauteur de la fenêtre */
+}
+
+.titre-site, .texte-intro, .astuces {
+	display: flex; /* Utilise flexbox */
+	justify-content: center; /* Centre horizontalement */
+	align-items: center; /* Centre verticalement */
 }
 
 
@@ -222,16 +229,19 @@ body {
 }
 
 .text-anxiete {
+	top: -21rem; /* Position verticale par rapport au centre */
 	font-size: 100px; /* Grande taille pour impact visuel */
 	font-weight: normal; /* Poids normal */
 }
 
 .text-universite {
+	top: -13rem; /* Moins haut que "anxiété" */
 	font-size: 100px; /* Même taille */
 	font-weight: normal;
 }
 
 .text-et {
+	top: -25rem; /* Encore plus haut */
 	font-size: 520px; /* Très grand pour l'effet "&" de fond */
 	opacity: 0.1; /* Semi-transparent */
 	line-height: 1; /* Ligne serrée */
@@ -243,14 +253,17 @@ body {
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
 	.text-anxiete {
+		top: -18rem; /* Descend encore */
 		font-size: 40px; /* Plus petit pour téléphones */
 	}
 
 	.text-universite {
+		top: -14rem;
 		font-size: 40px;
 	}
 
 		.text-et {
+	top: -24rem; /* Encore plus haut */
 	font-size: 440px; /* Très grand pour l'effet "&" de fond */
 	opacity: 0.1; /* Semi-transparent */
 	line-height: 1; /* Ligne serrée */
@@ -261,14 +274,17 @@ body {
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	.text-anxiete {
+		top: -19rem; /* Descend encore */
 		font-size: 60px; /* Plus petit pour téléphones */
 	}
 
 	.text-universite {
+		top: -13rem;
 		font-size: 60px;
 	}
 
 		.text-et {
+	top: -24rem; /* Encore plus haut */
 	font-size: 440px; /* Très grand pour l'effet "&" de fond */
 	opacity: 0.1; /* Semi-transparent */
 	line-height: 1; /* Ligne serrée */
@@ -284,56 +300,45 @@ body {
 
 /* === TEXTE SOUS TITRE PRINCIPAL === */
 
-.titre-site {
-  font-family: 'kindora', sans-serif;
-  text-align: center;
-  padding-top: 150px;
-  padding-bottom: 100px;
-}
+.texte-intro {
+	  position: relative;
+	  font-family: "Montserrat";
+	  margin-left: 50px;
 
-.main-title {
-  display: inline-block;
-  position: relative;
-}
+		font-size: 27px;
+		top: -32rem;
+	}
 
-.text-anxiete,
-.text-universite,
-.text-et {
-  position: relative; /* Relative au flux naturel */
-  display: block;
-  white-space: nowrap;
-  transition: all 0.5s ease;
-}
+.texte-intro1 {
+		align-content: center;
+	}
 
-.text-et {
-  font-size: 520px;
-  opacity: 0.1;
-  line-height: 1;
-  margin-bottom: -400px;
-}
+.texte-intro, .texte-intro1, .texte-intro1{
+		transition: all 0.5s ease; /* Transition fluide pour toutes les propriétés */
+	}
 
 
+/* Responsive pour téléphone */
 
-/* === Responsive pour téléphone === */
+@media screen and (min-width: 320px) and (max-width: 425px) {
 
-@media screen and (max-width: 425px) {
-  .texte-intro {
-    font-size: 20px;
-    padding: 30px 20px;
-  }
+	.texte-intro {
+		top: -26rem; /* Descend encore */
+		display: flex;
+		flex-direction: column;
+		gap: 30px; /* Espace de 20px entre CHAQUE enfant */
+		margin-right: 30px;
+		margin-top: -70px;
+		margin-bottom: -100px;
+	}
 
-  .text-anxiete,
-  .text-universite {
-    font-size: 40px;
-  }
+	.texte-intro1 {
+		font-size: 20px; /* Plus petit pour téléphones */
+	}
 
-  .text-et {
-    font-size: 440px;
-  }
-
-  .podcast-wrapper {
-    margin: 60px 10px;
-  }
+	.texte-intro2 {
+		font-size: 20px;
+	}
 }
 
 /* === Responsive pour tablette === */
@@ -341,6 +346,7 @@ body {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 
 	.texte-intro {
+		top: -37rem; /* Descend encore */
 		margin-right: 30px;
 	}
 
@@ -364,9 +370,12 @@ body {
 
 /* === PODCAST (CARROUSEL HORIZONTAL) === */
 
+/* Flèche */
+
 .podcast-wrapper {
-  margin: 100px 10px; /* Marge haute pour espacement */
   position: relative;
+  top: -40rem; /* <-- ici au lieu de sur .podcast */
+  margin-left: 10px;
 }
 
 
@@ -456,6 +465,7 @@ body {
 
 	.podcast-wrapper {
 		position: relative;
+		top: -27rem; /* Descend encore */
 	}
 
 	.arrow-right {
@@ -469,6 +479,7 @@ body {
 
 	.podcast-wrapper {
 		position: relative;
+		top: -50rem; /* Descend encore */
 	}
 
 	.arrow-right {
@@ -489,12 +500,17 @@ body {
 /* === GALERIE ASTUCES (Grille zoomable et responsive) === */
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--g);
-  padding: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+	position: relative;
+	top: -400px;
+  display: grid; /* Utilise CSS Grid pour organiser les éléments */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Crée des colonnes flexibles : min 250px, max prend tout l'espace */
+  gap: var(--g); /* Espace entre les cellules (défini dans les variables CSS) */
+  padding: 20px; /* Marge intérieure autour de la grille */
+  max-width: 1200px; /* Limite la largeur maximale de la galerie */
+  margin: 0 auto; /* Centre la galerie horizontalement */
+  font-size: var(--font-size); /* Taille de police héritée de la variable globale */
+  position: relative; /* Nécessaire pour z-index si besoin de superposer des éléments */
+  z-index: 1; /* S'assure que la galerie reste visible par-dessus d'autres éléments */
 }
 
 /* Style de base des cellules (cartes) dans la galerie */
@@ -558,6 +574,7 @@ body {
     gap: 15px;
     padding: 15px;
     max-width: 100%;
+    margin-top: -200px;
   }
 
   .nom {
@@ -587,6 +604,7 @@ body {
 .fin {
 	font-family: "chillax";
 	font-size: 25px;
+	margin-top: 5px;
 	text-align: center;
 	color: var(--couleur-fonce); 
 }
