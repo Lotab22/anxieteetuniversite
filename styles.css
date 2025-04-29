@@ -174,7 +174,7 @@ body {
 
 
 
-/* === Version téléphone === */
+/* === Responsive pour téléphone === */
 
 @media screen and (max-width: 500px) {
 
@@ -183,6 +183,14 @@ body {
 	}
 }
 
+/* === Responsive pour tablette  === */
+
+@media screen and (max-width: 800px) {
+
+	.navbar .nom {
+		font-size: 30px;
+	}
+}
 
 
 
@@ -260,6 +268,25 @@ body {
 }
 
 
+/* Responsive pour tablette */
+
+@media (max-width: 800px) {
+.text-anxiete {
+	top: -19rem; /* Position verticale par rapport au centre */
+	font-size: 60px; /* Grande taille pour impact visuel */
+	margin-left: -130px;
+	font-weight: normal; /* Poids normal */
+}
+
+.text-universite {
+	top: -13rem; /* Moins haut que "anxiété" */
+	font-size: 60px; /* Même taille */
+	margin-left: 130px;
+	font-weight: normal;
+}
+}
+
+
 
 
 
@@ -289,32 +316,10 @@ body {
 
 
 
-/* === Responsiveness pour texte descriptif === */ 
-
-/* Si écran ≤ 900px */
-@media (max-width: 900px) {
-
-	.texte-intro {
-		gap: 30px; /* Espace de 20px entre CHAQUE enfant */
-	}
-
-	.texte-intro1 {
-		top: -18rem; /* Ajuste la position verticale */
-		font-size: 20px; /* Réduit la taille du texte */
-		margin-right: 10px;
-		gap: 30px; /* Espace de 20px entre CHAQUE enfant */
-	}
-
-	.texte-intro2 {
-		top: -13rem;
-		font-size: 20px;
-		margin-left: -10px;
-	}
-}
 
 
+/* Responsive pour téléphone */
 
-/* Pour téléphone */
 @media (max-width: 500px) {
 
 	.texte-intro {
@@ -330,6 +335,26 @@ body {
 
 	.texte-intro2 {
 		font-size: 20px;
+		margin-left: 50px;
+	}
+}
+
+
+/* === Responsive pour tablette  === */
+
+@media screen and (max-width: 800px) {
+
+	.texte-intro {
+		top: -40rem; /* Descend encore */
+	}
+
+	.texte-intro1 {
+		font-size: 25px; /* Plus petit pour téléphones */
+		margin-left: 50px;
+	}
+
+	.texte-intro2 {
+		font-size: 25px;
 		margin-left: 50px;
 	}
 }
