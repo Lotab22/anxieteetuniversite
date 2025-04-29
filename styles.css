@@ -540,6 +540,7 @@ body {
 		--s: 200px;
 		--font-size: 32px;
 		margin-top: -800px;
+		margin-left: 10px;
 		grid-template-columns: repeat(2, 1fr);
 		max-width: calc(2 * var(--s) + 1 * var(--g));
 	}
