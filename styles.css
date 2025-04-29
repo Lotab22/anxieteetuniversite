@@ -11,8 +11,7 @@
 }
 
 body {
-	margin-left: 8px;
-	margin-right: 0px;
+  margin: 0;
 	color: var(--couleur-fonce); /* Couleur du texte */
 	background-color: var(--couleur-clair); /* Couleur de fond */
 	align-items: center; /* Centre verticalement (utile en flex) */
@@ -84,7 +83,7 @@ body {
 
 .navbar {
 	font-family: 'chillax', sans-serif; /* Police de caractères pour la navbar */
-	padding: 50px; /* Espacement interne autour du contenu */
+	padding: 30px; /* Espacement interne autour du contenu */
 	height: 120px; /* Hauteur fixe pour stabilité d'affichage */
 	display: flex; /* Utilise Flexbox pour aligner horizontalement */
 	justify-content: space-between; /* Écarte les éléments au maximum */
@@ -297,50 +296,22 @@ body {
 /* === TEXTE SOUS TITRE PRINCIPAL === */
 
 .texte-intro {
-	    position: relative;
-	    font-family: "Montserrat";
+	  position: relative;
+	  font-family: "Montserrat";
+	  margin-left: 50px;
+
 		font-size: 27px;
-		margin-right: 40px;
 		top: -32rem;
 	}
 
 .texte-intro1 {
-		margin-left: 50px;
-	}
-
-.texte-intro1 {
-		margin-right: 50px;
+		align-content: center;
 	}
 
 .texte-intro, .texte-intro1, .texte-intro1{
 		transition: all 0.5s ease; /* Transition fluide pour toutes les propriétés */
 	}
 
-
-
-/* === Responsiveness pour texte descriptif === */ 
-
-/* Si écran ≤ 900px */
-
-@media (max-width: 900px) {
-
-	.texte-intro {
-		gap: 30px; /* Espace de 20px entre CHAQUE enfant */
-	}
-
-	.texte-intro1 {
-		top: -18rem; /* Ajuste la position verticale */
-		font-size: 20px; /* Réduit la taille du texte */
-		margin-right: 10px;
-		gap: 30px; /* Espace de 20px entre CHAQUE enfant */
-	}
-
-	.texte-intro2 {
-		top: -13rem;
-		font-size: 20px;
-		margin-left: -10px;
-	}
-}
 
 /* Responsive pour téléphone */
 
@@ -350,16 +321,16 @@ body {
 		top: -26rem; /* Descend encore */
 		display: flex;
 		flex-direction: column;
+		gap: 30px; /* Espace de 20px entre CHAQUE enfant */
+		margin-right: 30px;
 	}
 
 	.texte-intro1 {
 		font-size: 20px; /* Plus petit pour téléphones */
-		margin-left: 50px;
 	}
 
 	.texte-intro2 {
 		font-size: 20px;
-		margin-left: 50px;
 	}
 }
 
@@ -369,11 +340,11 @@ body {
 
 	.texte-intro {
 		top: -37rem; /* Descend encore */
+		margin-right: 30px;
 	}
 
 	.texte-intro1 {
 		font-size: 25px; /* Plus petit pour téléphones */
-		margin-left: 50px;
 	}
 
 	.texte-intro2 {
@@ -397,6 +368,7 @@ body {
 .podcast-wrapper {
   position: relative;
   top: -40rem; /* <-- ici au lieu de sur .podcast */
+  margin-left: 10px;
 }
 
 
@@ -525,8 +497,6 @@ body {
 	grid-template-columns: repeat(3, 1fr);
 	width: 100%;
 	max-width: calc(3 * var(--s) + 2 * var(--g));
-	margin-left: auto;
-	margin-right: auto;
 	overflow: visible;
 	font-size: var(--font-size);
 }
@@ -570,7 +540,6 @@ body {
 		--s: 200px;
 		--font-size: 32px;
 		margin-top: -800px;
-		margin-left: 10px;
 		grid-template-columns: repeat(2, 1fr);
 		max-width: calc(2 * var(--s) + 1 * var(--g));
 
@@ -587,8 +556,6 @@ body {
 	.gallery {
 		position: relative;
 		margin-top: -2000px;
-		margin-left: 0,5px;
-		margin-right: 0,5px;
 	}
 
 }
