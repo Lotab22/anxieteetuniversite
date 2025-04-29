@@ -585,6 +585,10 @@ body {
     margin-top: -800px;
   }
 
+  .gallery > .cellule {
+    aspect-ratio: 1; /* Garde le format carré même sur mobile */
+  }
+
   .nom {
     font-size: 25px; /* Taille de police intermédiaire */
   }
