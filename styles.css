@@ -448,7 +448,7 @@ body {
   position: absolute;
   right: 1px;
   margin-right: 1px;
-  top: 69%;
+  top: 71%;
   transform: translateY(-50%);
   color: var(--couleur-fonce);
   border-radius: 50%;
@@ -514,6 +514,7 @@ body {
 	.gallery {
 		--s: 200px;
 		--font-size: 32px;
+		margin-top: -800px;
 		grid-template-columns: repeat(2, 1fr);
 		max-width: calc(2 * var(--s) + 1 * var(--g));
 	}
