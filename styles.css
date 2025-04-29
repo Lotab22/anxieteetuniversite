@@ -183,14 +183,6 @@ body {
 	}
 }
 
-/* === Responsive pour tablette  === */
-
-@media screen and (max-width: 800px) {
-
-	.navbar .nom {
-		font-size: 30px;
-	}
-}
 
 
 
@@ -268,23 +260,6 @@ body {
 }
 
 
-/* Responsive pour tablette */
-
-@media (max-width: 800px) {
-.text-anxiete {
-	top: -19rem; /* Position verticale par rapport au centre */
-	font-size: 60px; /* Grande taille pour impact visuel */
-	margin-left: -130px;
-	font-weight: normal; /* Poids normal */
-}
-
-.text-universite {
-	top: -13rem; /* Moins haut que "anxiété" */
-	font-size: 60px; /* Même taille */
-	margin-left: 130px;
-	font-weight: normal;
-}
-}
 
 
 
@@ -362,25 +337,6 @@ body {
 	}
 }
 
-
-/* === Responsive pour tablette  === */
-
-@media screen and (max-width: 800px) {
-
-	.texte-intro {
-		top: -40rem; /* Descend encore */
-	}
-
-	.texte-intro1 {
-		font-size: 25px; /* Plus petit pour téléphones */
-		margin-left: 50px;
-	}
-
-	.texte-intro2 {
-		font-size: 25px;
-		margin-left: 50px;
-	}
-}
 
 
 
