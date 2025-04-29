@@ -3,10 +3,6 @@
 
 /* === MISE EN PAGE GLOBALE === */
 
-html, body {
-	overflow-x: hidden;
-}
-
 * {
 	padding: 0; /* Supprime les paddings par défaut */
 	box-sizing: border-box; /* Inclut les paddings et bordures dans les dimensions */
@@ -15,7 +11,8 @@ html, body {
 }
 
 body {
-	margin: 0px;
+	margin-left: 8px;
+	margin-right: 0px;
 	color: var(--couleur-fonce); /* Couleur du texte */
 	background-color: var(--couleur-clair); /* Couleur de fond */
 	align-items: center; /* Centre verticalement (utile en flex) */
