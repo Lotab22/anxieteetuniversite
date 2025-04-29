@@ -3,10 +3,6 @@
 
 /* === MISE EN PAGE GLOBALE === */
 
-html, body {
-  overflow-x: hidden; /* Empêche tout défilement horizontal */
-}
-
 * {
 	padding: 0; /* Supprime les paddings par défaut */
 	box-sizing: border-box; /* Inclut les paddings et bordures dans les dimensions */
