@@ -576,13 +576,13 @@ body {
 
 /* === Responsive pour tablette === */
 
-@media screen and (min-width: 700px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .gallery {
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur tablette */
+    grid-template-columns: repeat(2, 1fr); /* 3 colonnes sur tablette */
     gap: 15px;
     padding: 15px;
     max-width: 100%;
-    margin-top: -500px;
+    margin-top: 10px;
   }
 
   .nom {
