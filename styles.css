@@ -204,6 +204,7 @@ body {
 
 
 /* === TITRE PRINCIPAL (ANXIETE & UNIVERSITE) === */
+
 .titre-site {
 	font-family: 'kindora', sans-serif; /* Police spécifique pour le titre principal */
 	position: relative; /* Pour positionner les textes enfants en absolute */
@@ -246,46 +247,48 @@ body {
 }
 
 
-/* === Responsive spécifique pour iPhone X (375px de large) === */
-@media screen and (max-width: 375px) {
+
+/* Responsive pour téléphone */
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
 	.text-anxiete {
-		top: -14rem; /* Positionnement plus bas pour l'écran plus petit */
-		font-size: 50px; /* Réduit la taille du texte pour un meilleur affichage */
+		top: -19rem; /* Descend encore */
+		font-size: 40px; /* Plus petit pour téléphones */
 	}
 
 	.text-universite {
-		top: -9rem; /* Position ajustée par rapport à "anxiété" */
-		font-size: 50px; /* Taille réduite pour s'adapter à l'écran */
+		top: -15rem;
+		font-size: 40px;
 	}
 
-	.text-et {
-		top: -15rem; /* Ajuste la position de "&" */
-		font-size: 400px; /* Réduit la taille pour l'adapter à l'écran */
-		opacity: 0.1; /* Reste semi-transparent pour l'effet visuel */
-		line-height: 1; /* Ligne serrée pour l'effet "&" */
-	}
+		.text-et {
+	top: -24rem; /* Encore plus haut */
+	font-size: 380px; /* Très grand pour l'effet "&" de fond */
+	opacity: 0.1; /* Semi-transparent */
+	line-height: 1; /* Ligne serrée */
+}
 }
 
-/* === Responsive spécifique pour iPhone 12 (390px de large) === */
-@media screen and (max-width: 390px) {
+/* Responsive pour tablette */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 	.text-anxiete {
-		top: -16rem; /* Positionnement légèrement plus bas */
-		font-size: 60px; /* Taille modifiée pour un affichage équilibré */
+		top: -19rem; /* Descend encore */
+		font-size: 60px; /* Plus petit pour téléphones */
 	}
 
 	.text-universite {
-		top: -10rem; /* Position ajustée pour cet appareil */
-		font-size: 60px; /* Taille réduite pour un affichage optimal */
+		top: -13rem;
+		font-size: 60px;
 	}
 
-	.text-et {
-		top: -18rem; /* Position ajustée de "&" */
-		font-size: 460px; /* Taille plus petite pour l'effet */
-		opacity: 0.1; /* Reste semi-transparent */
-		line-height: 1; /* Ligne serrée pour l'effet "&" */
-	}
+		.text-et {
+	top: -24rem; /* Encore plus haut */
+	font-size: 440px; /* Très grand pour l'effet "&" de fond */
+	opacity: 0.1; /* Semi-transparent */
+	line-height: 1; /* Ligne serrée */
 }
-
+}
 
 
 
@@ -312,6 +315,7 @@ body {
 .texte-intro, .texte-intro1, .texte-intro1{
 		transition: all 0.5s ease; /* Transition fluide pour toutes les propriétés */
 	}
+
 
 
 /* Responsive pour téléphone */
@@ -455,6 +459,7 @@ body {
 }
 
 
+
 /* Responsive pour téléphone */
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
@@ -586,10 +591,6 @@ body {
     font-size: 25px; /* Taille de police intermédiaire */
   }
 
-/* Réduit taille div podcats dans ce cas */
- .astuces, .fin {
- 	height: 2vh;
-}
 }
 
 
@@ -603,15 +604,4 @@ body {
 }
 
 
-
-/* Fin */
-
-.fin {
-	height: 5vh;
-	font-family: "chillax";
-	font-size: 25px;
-	margin-top: 5px;
-	text-align: center;
-	color: var(--couleur-fonce); 
-}
 
