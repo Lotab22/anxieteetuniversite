@@ -11,6 +11,7 @@
 }
 
 body {
+	margin: 0px;
 	color: var(--couleur-fonce); /* Couleur du texte */
 	background-color: var(--couleur-clair); /* Couleur de fond */
 	align-items: center; /* Centre verticalement (utile en flex) */
@@ -259,7 +260,26 @@ body {
 }
 }
 
+@media (max-width: 768px) {
+	.text-anxiete {
+		top: -18rem; /* Descend encore */
+		font-size: 40px; /* Plus petit pour téléphones */
+		margin-left: -50px;
+	}
 
+	.text-universite {
+		top: -14rem;
+		font-size: 40px;
+		margin-left: 30px;
+	}
+
+		.text-et {
+	top: -24rem; /* Encore plus haut */
+	font-size: 440px; /* Très grand pour l'effet "&" de fond */
+	opacity: 0.1; /* Semi-transparent */
+	line-height: 1; /* Ligne serrée */
+}
+}
 
 
 
@@ -356,6 +376,7 @@ body {
 
 
 .podcast {
+	margin-left: 15px;
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth; /* Effet de défilement fluide */
