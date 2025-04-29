@@ -3,6 +3,10 @@
 
 /* === MISE EN PAGE GLOBALE === */
 
+html, body {
+  overflow-x: hidden; /* Empêche tout défilement horizontal */
+}
+
 * {
 	padding: 0; /* Supprime les paddings par défaut */
 	box-sizing: border-box; /* Inclut les paddings et bordures dans les dimensions */
@@ -580,11 +584,11 @@ body {
     font-size: 25px; /* Taille de police intermédiaire */
   }
 
+/* Réduit taille div podcats dans ce cas */
  .astuces, .fin {
  	height: 2vh;
 }
 }
-
 
 
 
