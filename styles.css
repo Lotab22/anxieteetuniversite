@@ -3,7 +3,6 @@
 
 /* === MISE EN PAGE GLOBALE === */
 
-
 * {
 	padding: 0; /* Supprime les paddings par défaut */
 	box-sizing: border-box; /* Inclut les paddings et bordures dans les dimensions */
@@ -253,18 +252,18 @@ body {
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
 	.text-anxiete {
-		top: -18rem; /* Descend encore */
+		top: -19rem; /* Descend encore */
 		font-size: 40px; /* Plus petit pour téléphones */
 	}
 
 	.text-universite {
-		top: -14rem;
+		top: -15rem;
 		font-size: 40px;
 	}
 
 		.text-et {
 	top: -24rem; /* Encore plus haut */
-	font-size: 440px; /* Très grand pour l'effet "&" de fond */
+	font-size: 380px; /* Très grand pour l'effet "&" de fond */
 	opacity: 0.1; /* Semi-transparent */
 	line-height: 1; /* Ligne serrée */
 }
@@ -398,7 +397,7 @@ body {
 	font-size: 120px;
   position: absolute;
   right: 1px;
-  top: 70%;
+  top: 80%;
   transform: translateY(-50%);
   color: var(--couleur-fonce);
   border-radius: 50%;
@@ -469,7 +468,8 @@ body {
 	}
 
 	.arrow-right {
-  	top: 65%;
+  	top: 70%;
+  	right: 20px;
 }
 }
 
@@ -546,14 +546,17 @@ body {
   color: var(--couleur-clair); /* Texte en couleur claire */
 }
 
+
+
+
 /* === Responsive pour téléphone === */
 
 @media screen and (max-width: 425px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur petit écran */
     gap: 10px;
-    margin-top: 150px;
-    padding: 10px;
+    margin-top: 300px;
+    right: 10px;
     max-width: 100%;
   }
 
@@ -564,6 +567,11 @@ body {
   .nom {
     font-size: 20px; /* Réduit la taille du texte dans les cellules */
   }
+
+  /* Réduit taille div podcats dans ce cas */
+ .astuces, .fin {
+ 	height: 70vh;
+}
 }
 
 /* === Responsive pour tablette === */
@@ -602,6 +610,7 @@ body {
 /* Fin */
 
 .fin {
+	height: 5vh;
 	font-family: "chillax";
 	font-size: 25px;
 	margin-top: 5px;
