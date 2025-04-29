@@ -601,5 +601,13 @@ body {
 	background-color: transparent; /* Enlever le fond qui créer boîte */
 }
 
+.fin, .astuces {
+	font-family: "chillax";
+	font-size: 30px;
+	color: var(--couleur-fonce); /* Couleur des liens */
+	display: flex;
+	flex-direction: column;
+}
+
 
 
