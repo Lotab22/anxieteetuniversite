@@ -21,7 +21,6 @@ body {
 }
 
 
-
 /* === VARIABLES CSS GLOBALES === */
 
 :root {
@@ -32,7 +31,6 @@ body {
 	--couleur-fonce: #FF8A8C; /* Couleur principale */
 	--couleur-clair: white; /* Couleur secondaire */
 }
-
 
 
 /* === IMPORT DES TYPOGRAPHIE === */
@@ -61,7 +59,6 @@ body {
 }
 
 
-
 /* === STRUCTURE DES GRANDES SECTIONS === */
 
 .titre-site, .texte-intro, .podcast, .astuces {
@@ -73,6 +70,7 @@ body {
 	justify-content: center; /* Centre horizontalement */
 	align-items: center; /* Centre verticalement */
 }
+
 
 
 
@@ -177,12 +175,23 @@ body {
 
 /* === Responsive pour téléphone === */
 
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 320px) and (max-width: 425px) {
 
 	.navbar .nom {
 		font-size: 24px;
 	}
 }
+
+/* === Responsive pour tablette === */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+	.navbar .nom {
+		font-size: 30px;
+	}
+}
+
+
 
 
 
@@ -239,7 +248,7 @@ body {
 
 /* Responsive pour téléphone */
 
-@media (max-width: 500px) {
+@media screen and (min-width: 320px) and (max-width: 425px) {
 	.text-anxiete {
 		top: -18rem; /* Descend encore */
 		font-size: 40px; /* Plus petit pour téléphones */
@@ -260,17 +269,19 @@ body {
 }
 }
 
-@media (max-width: 768px) {
+/* Responsive pour tablette */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 	.text-anxiete {
-		top: -18rem; /* Descend encore */
-		font-size: 40px; /* Plus petit pour téléphones */
-		margin-left: -50px;
+		top: -19rem; /* Descend encore */
+		font-size: 60px; /* Plus petit pour téléphones */
+		margin-left: -130px;
 	}
 
 	.text-universite {
-		top: -14rem;
-		font-size: 40px;
-		margin-left: 30px;
+		top: -13rem;
+		font-size: 60px;
+		margin-left: 130px;
 	}
 
 		.text-et {
@@ -280,6 +291,7 @@ body {
 	line-height: 1; /* Ligne serrée */
 }
 }
+
 
 
 
@@ -314,6 +326,7 @@ body {
 /* === Responsiveness pour texte descriptif === */ 
 
 /* Si écran ≤ 900px */
+
 @media (max-width: 900px) {
 
 	.texte-intro {
@@ -334,11 +347,9 @@ body {
 	}
 }
 
-
-
 /* Responsive pour téléphone */
 
-@media (max-width: 500px) {
+@media screen and (min-width: 320px) and (max-width: 425px) {
 
 	.texte-intro {
 		top: -26rem; /* Descend encore */
@@ -353,6 +364,25 @@ body {
 
 	.texte-intro2 {
 		font-size: 20px;
+		margin-left: 50px;
+	}
+}
+
+/* === Responsive pour tablette === */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+	.texte-intro {
+		top: -37rem; /* Descend encore */
+	}
+
+	.texte-intro1 {
+		font-size: 25px; /* Plus petit pour téléphones */
+		margin-left: 50px;
+	}
+
+	.texte-intro2 {
+		font-size: 25px;
 		margin-left: 50px;
 	}
 }
@@ -456,30 +486,33 @@ body {
 }
 
 
-/* Pour téléphone */
+/* Responsive pour téléphone */
 
-@media (max-width: 500px) {
+@media screen and (min-width: 320px) and (max-width: 425px) {
 
-.podcast-wrapper {
+	.podcast-wrapper {
 		position: relative;
-		top: -28rem; /* Descend encore */
+		top: -25rem; /* Descend encore */
+	}
+}
+
+	/* === Responsive pour tablette === */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+	.podcast-wrapper {
+		position: relative;
+		top: -50rem; /* Descend encore */
 	}
 
-	/* Flèche */
+	.arrow-right {
+  top: 60%;
+}
 
-.arrow-right {
-	font-family: "montserrat";
-	font-size: 100px;
-  position: absolute;
-  right: 1px;
-  margin-right: 1px;
-  top: 71%;
-  transform: translateY(-50%);
-  color: var(--couleur-fonce);
-  border-radius: 50%;
-  padding: 10px;
 }
-}
+
+
+
 
 
 
@@ -492,6 +525,7 @@ body {
 .gallery {
 	position: relative;
 	margin-top: -900px;
+	margin-left: 10px;
 	display: grid;
 	gap: var(--g);
 	grid-template-columns: repeat(3, 1fr);
@@ -533,7 +567,7 @@ body {
 }
 
 
-/* Version responsive gallery pour tous support */
+/* Version responsive astuces pour tous support */
 
 @media (max-width: 500px) {
 	.gallery {
@@ -546,6 +580,34 @@ body {
 	}
 }
 
+	/* === Responsive pour téléphone === */
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+
+	.gallery {
+		position: relative;
+		margin-top: -500px;
+		margin-left: 0,5px;
+		margin-right: 0,5px;
+	}
+
+}
+
+	/* === Responsive pour tablette === */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+	.gallery {
+		position: relative;
+		margin-top: -2000px;
+		margin-left: 0,5px;
+		margin-right: 0,5px;
+	}
+
+}
+
+
+
 /* Enlever la couleur des liens */
 
 .astuces a {
@@ -553,7 +615,6 @@ body {
 	background-color: var(--couleur-fonce); /* Fond clair */
 	background-color: transparent; /* Enlever le fond qui créer boîte */
 }
-
 
 
 
@@ -570,19 +631,5 @@ body {
 	margin-top: 15px;
 	text-align: center;
 	color: var(--couleur-fonce); 
-}
-
-
-/* Pour téléphone */
-
-@media (max-width: 500px) {
-
-.fin {
-  text-align: center;
-	font-family: "chillax";
-	font-size: 20px;
-	color: var(--couleur-fonce); 
-}
-
 }
 
