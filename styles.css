@@ -508,9 +508,9 @@ body {
 
 .gallery {
 	position: relative;
-	top: -400px;
+	top: 0px;
   display: grid; /* Utilise CSS Grid pour organiser les éléments */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Crée des colonnes flexibles : min 250px, max prend tout l'espace */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crée des colonnes flexibles : min 250px, max prend tout l'espace */
   gap: var(--g); /* Espace entre les cellules (défini dans les variables CSS) */
   padding: 20px; /* Marge intérieure autour de la grille */
   max-width: 1200px; /* Limite la largeur maximale de la galerie */
@@ -561,7 +561,7 @@ body {
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur petit écran */
     gap: 10px;
-    margin-top: 300px;
+    margin-top: -500px;
     max-width: 100%;
   }
 
@@ -582,6 +582,7 @@ body {
     gap: 15px;
     padding: 15px;
     max-width: 100%;
+    margin-top: -800px;
   }
 
   .nom {
