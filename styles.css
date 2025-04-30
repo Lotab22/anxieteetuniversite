@@ -666,7 +666,7 @@ body {
 @media screen and (min-width: 320px) and (max-width: 425px) {
 
 .carnet {
-	margin-top: 5px;
+	margin-top: -30px;
 	width: 320px;
 	height: 570px;
 }
