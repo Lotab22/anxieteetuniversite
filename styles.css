@@ -626,3 +626,60 @@ body {
 
 
 
+
+
+
+
+
+/* === PAGE CARNET MOCHE === */
+
+.fond {
+	height: 100vh;
+	background-color: #FF8A8C;
+	justify-items: center;
+}
+
+.carnet {
+	width: 400px;
+	height: 720px;
+}
+
+.texte-clic a {
+	font-family: "chillax";
+	font-size: 30px;
+	color: white;
+	margin-top: 25px;	
+}
+
+
+
+/* === Responsive pour téléphone === */
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+
+.carnet {
+	margin-top: 30px;
+	width: 330px;
+	height: 610px;
+}
+
+.texte-clic a {
+	font-family: "chillax";
+	font-size: 24px;
+	color: white;
+	margin-top: 28px;	
+}
+}
+
+/* === Responsive pour tablette === */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 3 colonnes sur tablette */
+    gap: 15px;
+    padding: 15px;
+    max-width: 100%;
+    margin-top: -800px;
+  }
+
+}
