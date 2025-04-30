@@ -637,7 +637,6 @@ body {
 	background-color: var(--couleur-fonce); /* Fond clair */
 	color: var(--couleur-clair); /* Couleur des liens */
 	height: 100vh;
-	justify-items: center;
 }
 
 .carnet {
@@ -663,12 +662,16 @@ body {
 	margin-top: 30px;
 	width: 330px;
 	height: 610px;
+	margin-left: 50px;
+	margin-right: 50px;
 }
 
 .texte-clic a {
 	font-family: "chillax";
 	font-size: 25px;
 	color: white;
+	margin-left: 50px;
+	margin-right: 50px;
 }
 }
 
