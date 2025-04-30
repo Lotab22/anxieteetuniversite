@@ -634,56 +634,82 @@ body {
 /* === PAGE CARNET MOCHE === */
 
 .fond {
-	background-color: var(--couleur-fonce); /* Fond clair */
-	color: var(--couleur-clair); /* Couleur des liens */
-	height: 100vh;
+	background-color: #FF8A8C;
+	width: 100%;
+	height: 100vh; /* pleine hauteur d’écran */
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* centre verticalement */
+	align-items: center;     /* centre horizontalement */
 }
 
 .carnet {
-	margin-top: 30px;
+	margin-top: 5px;
 	width: 400px;
 	height: 720px;
 }
 
-.texte-clic a {
-	font-family: "chillax";
-	font-size: 30px;
-	color: white;
-	margin-top: 25px;	
+.texte-clic {
+	margin-bottom: 10px;
 }
 
-
+.texte-clic a {
+	font-family: "chillax", sans-serif;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
 
 /* === Responsive pour téléphone === */
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
 
 .carnet {
-	margin-top: 30px;
-	width: 330px;
-	height: 610px;
-	margin-left: 25px;
-	margin-right: 50px;
+	margin-top: 5px;
+	width: 320px;
+	height: 570px;
+}
+
+.texte-clic {
+	margin-bottom: 10px;
 }
 
 .texte-clic a {
-	font-family: "chillax";
-	font-size: 23px;
+	font-family: "chillax", sans-serif;
+	font-size: 25px;
 	color: white;
-	margin-left: 38px;
-	margin-right: 50px;
+	text-align: center;
+	text-decoration: none;
 }
 }
+
+
 
 /* === Responsive pour tablette === */
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr); /* 3 colonnes sur tablette */
-    gap: 15px;
-    padding: 15px;
-    max-width: 100%;
-    margin-top: -800px;
-  }
+
+.carnet {
+	margin-top: 5px;
+	width: 400px;
+	height: 720px;
+}
+
+.texte-clic {
+	margin-bottom: 10px;
+}
+
+.texte-clic a {
+	font-family: "chillax", sans-serif;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
 
 }
+
+
+
+
