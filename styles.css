@@ -8,6 +8,7 @@
 	box-sizing: border-box; /* Inclut les paddings et bordures dans les dimensions */
 	text-decoration: none; /* Supprime les soulignements des liens */
 	list-style: none; /* Supprime les puces des listes */
+	scroll-behavior: smooth;
 }
 
 body {
@@ -372,6 +373,10 @@ body {
 
 /* === PODCAST (CARROUSEL HORIZONTAL) === */
 
+#podcast-wrapper {
+	scroll-margin-top:2em;
+	}
+
 /* Flèche */
 
 .podcast-wrapper {
@@ -506,6 +511,10 @@ body {
 
 /* === ASTUCES === */
 
+#astuces {
+	scroll-margin-top:2em;
+	}
+
 .gallery {
 	position: relative;
 	top: 0px;
@@ -591,6 +600,7 @@ body {
 
   .nom {
     font-size: 25px; /* Taille de police intermédiaire */
+    padding: 4.5em 0;
   }
 
 }

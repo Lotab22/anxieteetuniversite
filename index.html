@@ -164,7 +164,7 @@
     			<div class="nom"><a href="https://www.nightline.fr/">Nightline</a></div>
     		</div>
     		<div class="cellule">
-    			<div class="nom"><a href="https://www.yvon-lambert.com/fr/products/leonard-koren-wabi-sabi-a-lusage-des-artistes-designers-poetes-philosophes?srsltid=AfmBOoryeRX0hlW51zanvQfg2OCMaTlZjHINXxxfCgZOgXDWt9rMKV4K">Philosophie Wabi-Sabi</a></div>
+    			<div class="nom"><a href="https://www.yvon-lambert.com/fr/products/leonard-koren-wabi-sabi-a-lusage-des-artistes-designers-poetes-philosophes?srsltid=AfmBOoryeRX0hlW51zanvQfg2OCMaTlZjHINXxxfCgZOgXDWt9rMKV4K">Philosophie<br> Wabi-Sabi</a></div>
     		</div>
     		<div class="cellule">
     			<div class="nom"><a href="https://lullie.co/?srsltid=AfmBOoq_-JSAMuv1gOovHqinQ6oS6drWsbVq6oYbQDEC22T6gapEs-Qx">Bague anti-stress</a></div>
@@ -215,11 +215,17 @@
 	// JavaScript pour la navbar
     const menuHamburger = document.querySelector(".menu-hamburger"); // Récupère l'élément du menu hamburger
     const navLinks = document.querySelector(".nav-links"); // Récupère l'élément des liens de navigation
+    const navLinksa = document.querySelectorAll(".nav-links a");
 
     menuHamburger.addEventListener('click', () => { // Ajoute un événement au clic du menu hamburger
         navLinks.classList.toggle('mobile-menu'); // Ajoute ou enlève la classe "mobile-menu" pour afficher ou masquer le menu
     });
 
+    navLinksa.forEach(link => { // Exemple : ajouter un écouteur d'événement
+        link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-menu'); // Ajoute ou enlève la classe "mobile-menu" pour afficher ou masquer le menu
+    });
+    });
 
 
     // JavaScript pour changer les couleurs lors du défilement
