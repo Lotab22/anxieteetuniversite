@@ -569,7 +569,7 @@ body {
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur petit écran */
     gap: 10px;
-    margin-top: -250px;
+    margin-top: -450px;
     max-width: 100%;
   }
 
@@ -578,7 +578,7 @@ body {
   }
 
   .nom {
-    font-size: 20px; /* Réduit la taille du texte dans les cellules */
+    font-size: 30px; /* Réduit la taille du texte dans les cellules */
   }
 
   .astuces {
