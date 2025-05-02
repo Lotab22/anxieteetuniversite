@@ -566,7 +566,7 @@ body {
 
 /* === Responsive pour téléphone === */
 
-@media screen and (min-width: 320px) and (max-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 576px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur petit écran */
     gap: 10px;
@@ -581,11 +581,18 @@ body {
   .nom {
     font-size: 20px; /* Réduit la taille du texte dans les cellules */
   }
+
+  .astuces {
+    display: block;
+  }
 }
+
+
+
 
 /* === Responsive pour tablette === */
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 576px) and (max-width: 1024px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* 3 colonnes sur tablette */
     gap: 15px;
