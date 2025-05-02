@@ -592,7 +592,7 @@ body {
 
 @media screen and (min-width: 576px) and (max-width: 1024px) {
   .gallery {
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur tablette */
+    grid-template-columns: repeat(2, 1fr); /* 3 colonnes sur tablette */
     gap: 15px;
     padding: 15px;
     max-width: 100%;
@@ -605,7 +605,7 @@ body {
 
   .nom {
     font-size: 25px; /* Taille de police intermédiaire */
-    padding: 3em 0;
+    padding: 2em 0;
   }
 
 }
