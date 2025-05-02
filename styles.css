@@ -569,7 +569,7 @@ body {
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur petit écran */
     gap: 10px;
-    margin-top: -450px;
+    margin-top: -300px;
     max-width: 100%;
   }
 
