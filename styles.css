@@ -638,6 +638,7 @@ body {
 	color: var(--couleur-fonce); /* Couleur des liens */
 	display: flex;
 	flex-direction: column;
+	margin-top: 10px;
 }
 
 
