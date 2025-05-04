@@ -151,7 +151,7 @@ body {
 		width: 100%; /* Prend toute la largeur */
 		height: 100vh; /* Prend toute la hauteur visible */
 		background-color: rgba(255, 255, 255, 0.3); /* Fond semi-transparent */
-		backdrop-filter: blur(20px); /* Floute l'arrière-plan */
+		backdrop-filter: blur(10px); /* Floute l'arrière-plan */
 		-webkit-backdrop-filter: blur(20px); /* <-- ajouté ici */
 		display: flex; /* Flexbox pour aligner contenu */
 		flex-direction: column; /* Direction verticale */
