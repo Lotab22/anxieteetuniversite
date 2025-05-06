@@ -537,7 +537,7 @@ body {
 
 	.arrow-right {
   top: 75%;
-  display: block;
+  display: block; /* Car display:none avant */
 }
 }
 
@@ -653,6 +653,31 @@ body {
 
 /* Responsive pour petit téléphone */
 @media (max-width: 375px) {
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur petit écran */
+    gap: 10px;
+    margin-top: -100px;
+    max-width: 100%;
+    margin-left: 7px;
+  }
+
+  .gallery > .cellule {
+    aspect-ratio: 1; /* Garde le format carré même sur mobile */
+  }
+
+  .nom {
+    font-size: 27px; /* Réduit la taille du texte dans les cellules */
+  }
+
+  .astuces {
+    display: block;
+  }
+}
+
+/* === Responsive pour téléphone === */
+
+@media screen (max-width: 390px) {
 
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur petit écran */
