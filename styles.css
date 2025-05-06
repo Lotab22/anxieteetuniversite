@@ -657,7 +657,7 @@ body {
     gap: 10px;
     margin-top: -100px;
     max-width: 100%;
-    margin-left: -2px;
+    margin-left: 6px;
   }
 
   .gallery > .cellule {
