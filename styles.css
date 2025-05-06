@@ -500,7 +500,7 @@ body {
 
 /* Responsive pour téléphone */
 
-@media screen and (min-width: 320px) and (max-width: 768px) {
+@media screen and (min-width: 375px) and (max-width: 768px) {
 
 	.podcast-wrapper {
 		position: relative;
@@ -522,7 +522,7 @@ body {
 	}
 
 	.arrow-right {
-  top: 65%;
+  top: 80%;
 }
 }
 
@@ -535,7 +535,7 @@ body {
 	}
 
 	.arrow-right {
-    display: none;
+  top: 30%;
 }
 }
 
