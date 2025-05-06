@@ -182,7 +182,7 @@ body {
 
 /* === Responsive pour téléphone === */
 
-@media screen and (min-width: 320px) and (max-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
 
 	.navbar .nom {
 		font-size: 24px;
@@ -199,7 +199,6 @@ body {
 		margin-left: -90px;
 	}
 }
-
 
 
 
@@ -256,7 +255,7 @@ body {
 
 /* Responsive pour téléphone */
 
-@media screen and (min-width: 320px) and (max-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
 	.text-anxiete {
 		top: -19rem; /* Descend encore */
 		font-size: 40px; /* Plus petit pour téléphones */
@@ -304,6 +303,7 @@ body {
 
 
 
+
 /* === TEXTE SOUS TITRE PRINCIPAL === */
 
 .texte-intro {
@@ -327,7 +327,7 @@ body {
 
 /* Responsive pour téléphone */
 
-@media screen and (min-width: 320px) and (max-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
 
 	.texte-intro {
 		top: -26rem; /* Descend encore */
@@ -365,6 +365,29 @@ body {
 		font-size: 25px;
 		margin-left: 50px;
 	}
+}
+
+/* Responsive pour petit téléphone */
+@media (max-width: 375px) {
+
+	.texte-intro {
+		top: -21rem; /* Descend encore */
+		display: flex;
+		flex-direction: column;
+		gap: 30px; /* Espace de 20px entre CHAQUE enfant */
+		margin-right: 30px;
+		margin-top: -70px;
+		margin-bottom: -100px;
+	}
+
+	.texte-intro1 {
+		font-size: 20px; /* Plus petit pour téléphones */
+	}
+
+	.texte-intro2 {
+		font-size: 20px;
+	}
+
 }
 
 
@@ -477,7 +500,7 @@ body {
 
 /* Responsive pour téléphone */
 
-@media screen and (min-width: 320px) and (max-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
 
 	.podcast-wrapper {
 		position: relative;
@@ -501,7 +524,19 @@ body {
 	.arrow-right {
   top: 65%;
 }
+}
 
+/* Responsive pour petit téléphone */
+@media (max-width: 375px) {
+
+	.podcast-wrapper {
+		position: relative;
+		top: -19rem; /* Descend encore */
+	}
+
+	.arrow-right {
+    display: none;
+}
 }
 
 
@@ -571,6 +606,7 @@ body {
 /* === Responsive pour téléphone === */
 
 @media screen and (min-width: 320px) and (max-width: 576px) {
+
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur petit écran */
     gap: 10px;
@@ -591,12 +627,10 @@ body {
   }
 }
 
-
-
-
 /* === Responsive pour tablette === */
 
 @media screen and (min-width: 576px) and (max-width: 1024px) {
+
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* 3 colonnes sur tablette */
     gap: 15px;
@@ -613,7 +647,29 @@ body {
     font-size: 25px; /* Taille de police intermédiaire */
     padding: 3em 2.5em;
   }
+}
 
+/* Responsive pour petit téléphone */
+@media (max-width: 375px) {
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur petit écran */
+    gap: 10px;
+    margin-top: -100px;
+    max-width: 100%;
+  }
+
+  .gallery > .cellule {
+    aspect-ratio: 1; /* Garde le format carré même sur mobile */
+  }
+
+  .nom {
+    font-size: 28px; /* Réduit la taille du texte dans les cellules */
+  }
+
+  .astuces {
+    display: block;
+  }
 }
 
 
@@ -685,7 +741,7 @@ body {
 
 /* === Responsive pour téléphone === */
 
-@media screen and (min-width: 320px) and (max-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
 
 .carnet {
 	margin-top: -30px;
