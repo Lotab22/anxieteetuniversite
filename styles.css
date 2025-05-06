@@ -657,6 +657,7 @@ body {
     gap: 10px;
     margin-top: -100px;
     max-width: 100%;
+    margin-left: -2px;
   }
 
   .gallery > .cellule {
@@ -664,7 +665,7 @@ body {
   }
 
   .nom {
-    font-size: 25px; /* Réduit la taille du texte dans les cellules */
+    font-size: 27px; /* Réduit la taille du texte dans les cellules */
   }
 
   .astuces {
