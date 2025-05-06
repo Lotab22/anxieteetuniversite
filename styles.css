@@ -537,6 +537,7 @@ body {
 
 	.arrow-right {
   top: 75%;
+  display: block;
 }
 }
 
