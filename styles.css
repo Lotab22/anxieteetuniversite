@@ -664,7 +664,7 @@ body {
   }
 
   .nom {
-    font-size: 28px; /* Réduit la taille du texte dans les cellules */
+    font-size: 25px; /* Réduit la taille du texte dans les cellules */
   }
 
   .astuces {
